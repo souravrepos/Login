@@ -7,10 +7,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Connection created for mongoose
 mongoose
   .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Mongo Connected"))
   .catch(err => console.log(err));
 
-const port = process.env.PORT || 3000;
+// Server Port
+const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Node Server started at PORT ${port}`));
