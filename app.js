@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 mongoose
-  .connect(config.mongoURI)
+  .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Mongo Connected"))
   .catch(err => console.log(err));
 
